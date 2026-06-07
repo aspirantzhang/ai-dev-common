@@ -32,17 +32,24 @@
 ## 跨模块硬边界
 
 - Order 可以通过 BillingPort 请求退款，但不得直接修改 Billing 内部状态。
-- UI 不得绕过应用服务直接访问持久化层；若项目已有详细分层规则，链接到 `docs/architecture/dependency-rules.md`。
+- UI 不得绕过应用服务直接访问持久化层；若项目已有详细分层规则，链接到 `docs/dependency-rules.md`。
 - Inventory 不得读取 Order 私有表或 UI 状态；库存变更通过明确接口或事件完成。
 
 ## 高风险影响摘要
 
-> 本节只保留少数最高风险的跨模块影响提示。完整变更影响关系见 `docs/architecture/impact-map.md`。
+> 本节只保留少数最高风险的跨模块影响提示。完整变更影响关系见 `docs/impact-map.md`。
 
-| 如果修改           | 先检查                           | 原因                                   |
-| ------------------ | -------------------------------- | -------------------------------------- |
-| Order cancellation | Billing, Inventory, Notification | 取消订单会影响退款、库存释放和用户通知 |
-| Payment status     | Order, Billing                   | 支付状态可能改变订单流转和计费状态     |
+### Order cancellation
+
+- **如果修改**: Order cancellation
+- **先检查**: Billing, Inventory, Notification
+- **原因**: 取消订单会影响退款、库存释放和用户通知
+
+### Payment status
+
+- **如果修改**: Payment status
+- **先检查**: Order, Billing
+- **原因**: 支付状态可能改变订单流转和计费状态
 
 ## 禁区
 
@@ -54,8 +61,8 @@
 
 ## 相关文档
 
-- `docs/architecture/dependency-rules.md`（如有）
-- `docs/architecture/impact-map.md`
+- `docs/dependency-rules.md`（如有）
+- `docs/impact-map.md`
 - `docs/adr/index.md`
 ```
 
