@@ -1,16 +1,6 @@
 # AI Dev Common
 
-```
-docs/
-    specs/             <- 规约库（业务行为的唯一事实来源）
-    adr/               <- ADR（架构决策记录）
-    module-map.md      <- 模块地图（模块边界）
-    impact-map.md      <- 影响地图（跨模块影响）
-```
-
 ## Skills
-
-这些技能放在 `.agents/skills/` 下，用来把常见的规划、文档、Git 流程和验收工作沉淀成可复用的 Agent 操作规范。每个技能都包含触发场景、执行流程、产物边界和安全约束，使用前应先读取对应的 `SKILL.md`。
 
 ### Git 流程
 
@@ -32,3 +22,11 @@ docs/
 - [module-map-writer](./.agents/skills/module-map-writer/SKILL.md)：维护模块地图，用短而稳定的方式说明模块职责、入口、硬边界和 AI 容易走错的禁区。
 - [user-story-card-writer](./.agents/skills/user-story-card-writer/SKILL.md)：把口语化业务需求整理成用户故事卡，输出背景、用户故事、验收标准、Given-When-Then 场景和待确认事项。
 - [qa-acceptance-guide-writer](./.agents/skills/qa-acceptance-guide-writer/SKILL.md)：编写面向 QA/UAT 的验收指南，明确测试范围、验收步骤、边界场景和证据。
+
+```
+docs/
+    specs/             <- 规约库（业务行为的唯一事实来源）
+    adr/               <- ADR（架构决策记录）
+    module-map.md      <- 模块地图（模块边界）
+    impact-map.md      <- 影响地图（跨模块影响）
+```
